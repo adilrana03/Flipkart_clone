@@ -1,15 +1,22 @@
-import Navbar from './Navbar'
+import Navbar from './Navbar';
+import Banner from './Banner';
+import React from 'react';
+import { Box, styled } from '@mui/material';
 
-
-
-import React from 'react'
+const Component = styled(Box)`
+	padding: 10px 10px;
+        background:#f2f2f2;
+`;
 
 const Home = () => {
-  return (
-    <div>
-        <Navbar/>
-    </div>
-  )
-}
+	return (
+		<>
+			<Navbar />
+			<Component>
+				<Banner />
+			</Component>
+		</>
+	);
+};
 
-export default Home
+export default Home;
