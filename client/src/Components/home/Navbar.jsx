@@ -1,37 +1,42 @@
-import React from 'react';
-import { Box, styled, Typography } from '@mui/material';
-import { navData } from '../../constants/data';
 
-const Component = styled(Box)`
-	display: flex;
-	margin: 55px 130px 0 130px;
-	justify-content: space-between;
-`;
+import { Typography, Box, styled } from '@mui/material'; 
+
+import { navData } from '../../constant/data';
+
+const Component = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'space-between',
+    margin: '55px 130px 0 130px !important',
+    overflowX: 'overlay',
+    [theme.breakpoints.down('lg')]: {
+        margin: '0px !important'
+    }
+}))
 
 const Container = styled(Box)`
-	padding: 12px 8px;
-	text-align: center;
-`;
+    padding: 12px 8px;
+    text-align: center
+`
 
 const Text = styled(Typography)`
-font-size:14px;
-font-weight:510;
-font-family-inherit;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
 `;
 
-const Navbar = () => {
-	return (
-		<div>
-			<Component>
-				{navData.map(data => (
-					<Container>
-						<img src={data.url} alt='nav' style={{ width: 64 }} />
-						<Text>{data.text}</Text>
-					</Container>
-				))}
-			</Component>
-		</div>
-	);
-};
+const NavBar = () => {
+    return (
+        <Component>
+            {
+                navData.map(temp => (
+                    <Container>
+                        <img src={temp.url} style={{  width: 64 }} />
+                        <Text>{temp.text}</Text>
+                    </Container>
+                ))
+            }
+        </Component>
+    )
+}
 
-export default Navbar;
+export default NavBar;

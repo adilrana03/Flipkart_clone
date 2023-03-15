@@ -1,5 +1,5 @@
-import Header from './Components/header/Header';
-import Home from './Components/home/Home';
+import Header from './Components/Header/Header';
+import Home from './Components/Home/Home';
 import { Box } from '@mui/material';
 
 function App() {
